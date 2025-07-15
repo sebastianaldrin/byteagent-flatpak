@@ -1,0 +1,40 @@
+app-id: com.byteagent.ByteAgent
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+command: byteagent
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --share=network
+  - --filesystem=home
+  - --device=dri
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.gtk.vfs.*
+  - --filesystem=xdg-run/gvfsd
+
+modules:
+  - name: byteagent
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/bin
+      - cp -r build/flutter/build/linux/x64/release/bundle /app/bundle
+      - echo '#!/bin/bash' > /app/bin/byteagent
+      - echo 'cd /app/bundle && exec ./byteagent "$@"' >> /app/bin/byteagent
+      - chmod +x /app/bin/byteagent
+      - mkdir -p /app/share/applications
+      - mkdir -p /app/share/icons/hicolor/256x256/apps
+      - cp src/assets/icon-512.png /app/share/icons/hicolor/256x256/apps/com.byteagent.ByteAgent.png
+      - install -Dm644 com.byteagent.ByteAgent.desktop /app/share/applications/com.byteagent.ByteAgent.desktop
+      - install -Dm644 com.byteagent.ByteAgent.metainfo.xml /app/share/metainfo/com.byteagent.ByteAgent.metainfo.xml
+    sources:
+      - type: archive
+        url: https://github.com/aldrin-ai/byte-agent/releases/download/v1.0.0/byteagent-linux-v1.0.0.tar.gz
+        sha256: # This will be filled when you create the release
+      - type: file
+        path: com.byteagent.ByteAgent.desktop
+      - type: file
+        path: com.byteagent.ByteAgent.metainfo.xml
