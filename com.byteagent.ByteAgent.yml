@@ -6,14 +6,15 @@ command: byteagent
 
 finish-args:
   - --share=ipc
-  - --socket=x11
   - --socket=wayland
+  - --socket=fallback-x11
   - --share=network
-  - --filesystem=home
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-desktop
   - --device=dri
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.secrets
-  - --talk-name=org.gtk.vfs.*
   - --filesystem=xdg-run/gvfsd
 
 modules:
