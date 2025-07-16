@@ -23,7 +23,7 @@ modules:
     build-commands:
       - mkdir -p /app/bin
       - cp -r bundle /app/bundle
-      - echo '#!/bin/bash' > /app/bin/byteagent
+      - echo '#\!/bin/bash' > /app/bin/byteagent
       - echo 'cd /app/bundle && exec ./byteagent "$@"' >> /app/bin/byteagent
       - chmod +x /app/bin/byteagent
       - mkdir -p /app/share/applications
