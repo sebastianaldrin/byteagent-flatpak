@@ -22,8 +22,8 @@
     </ul>
   </description>
   <launchable type="desktop-id">com.byteagent.ByteAgent.desktop</launchable>
-  <url type="homepage">https://github.com/aldrin-ai/byte-agent</url>
-  <url type="bugtracker">https://github.com/aldrin-ai/byte-agent/issues</url>
+  <url type="homepage">https://github.com/sebastianaldrin/byte-agent-releases</url>
+  <url type="bugtracker">https://github.com/sebastianaldrin/byte-agent-releases/issues</url>
   <developer_name>Aldrin AI</developer_name>
   <content_rating type="oars-1.1" />
   <screenshots>
