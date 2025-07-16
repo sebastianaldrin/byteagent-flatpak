@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>com.byteagent.ByteAgent</id>
   <metadata_license>MIT</metadata_license>
-  <project_license>MIT</project_license>
+  <project_license>LicenseRef-proprietary</project_license>
   <name>ByteAgent</name>
   <summary>AI Desktop Assistant with 64+ Professional Tools</summary>
   <description>
@@ -26,6 +26,12 @@
   <url type="bugtracker">https://github.com/aldrin-ai/byte-agent/issues</url>
   <developer_name>Aldrin AI</developer_name>
   <content_rating type="oars-1.1" />
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/user-attachments/assets/01a6843c-a753-453b-9456-3fd5dbb73fb2</image>
+      <caption>ByteAgent main interface showing AI-powered tools</caption>
+    </screenshot>
+  </screenshots>
   <releases>
     <release version="1.0.0" date="2025-01-15">
       <description>
