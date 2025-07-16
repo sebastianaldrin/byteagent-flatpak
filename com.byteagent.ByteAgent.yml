@@ -22,7 +22,7 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p /app/bin
-      - cp -r build/flutter/build/linux/x64/release/bundle /app/bundle
+      - cp -r bundle /app/bundle
       - echo '#!/bin/bash' > /app/bin/byteagent
       - echo 'cd /app/bundle && exec ./byteagent "$@"' >> /app/bin/byteagent
       - chmod +x /app/bin/byteagent
@@ -33,7 +33,7 @@ modules:
       - install -Dm644 com.byteagent.ByteAgent.metainfo.xml /app/share/metainfo/com.byteagent.ByteAgent.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/aldrin-ai/byte-agent/releases/download/v1.0.0/byteagent-linux-v1.0.0.tar.gz
+        url: https://github.com/sebastianaldrin/byte-agent-releases/releases/download/v1.0.0/byteagent-linux-v1.0.0.tar.gz
         sha256: 5e326ee7569b49a50ed22ffe5dbb2ca41ebdde9df7930431a8a1ee3753b1fb0e
       - type: file
         path: com.byteagent.ByteAgent.desktop
